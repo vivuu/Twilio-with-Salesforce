@@ -1,0 +1,46 @@
+.mainContainer{
+	width: 100%;
+    height: 15rem !important;
+}
+.selectContainer{
+	margin: 1rem 4%;
+    width: 92%;
+}
+
+.ifrem-container1{
+    width: 96%;
+    /* height: 25.9rem; */
+    max-height: 25rem;
+    min-height: 12rem;
+    background-color: rgb(222 222 222 / 50%);
+    margin: 1% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.ifrem-container2{
+    width: 96%;
+    /* height: 25.9rem; */
+    height: 25rem;
+    min-height: 12rem;
+    background-color: rgb(222 222 222 / 50%);
+    margin: 1% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.emptyContainer{
+    width: 100%;
+    height: 100%;
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.buttoncontainer{
+    text-align: end;
+    width: 90%;
+    margin: 2% 5%;
+}

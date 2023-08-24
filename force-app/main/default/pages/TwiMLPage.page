@@ -1,0 +1,10 @@
+<apex:page contentType="text/xml">
+    <Response>
+        <Say>Welcome to our service. Please wait while we connect you.</Say>
+         <Dial callerId="(470) 688-5257">
+            <Client>Vikas</Client>
+            <Number>919784507472</Number>
+             <!--<Number>918949633528</Number> - Yash Bahu-Bali-->
+        </Dial>
+    </Response>
+</apex:page>

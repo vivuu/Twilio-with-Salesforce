@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  title="WhatsApp Messenger">
+        <div>
+            <div class="mainContainer">
+                <template class="cardContainer" for:each={messageArray} for:item="msg">
+                    <div if:true={msg.isSent} key={msg.Id} class="sentContainerClass">
+                        <div class="sentClass">
+                            {msg.message}
+                        </div>
+                    </div>
+                    <div if:false={msg.isSent} key={msg.Id} class="recieveContainerClass">
+                        <div class="recieveClass">
+                            {msg.message}
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="footerContainer">
+                <div class="inputContainer">
+                    <input type="text" placeholder="Type a message" class="inputClass" data-enter=false onkeydown={SendMessageMethod}>
+                    <!-- <lightning-input-rich-text placeholder="Type a message" class="inputClass" data-enter=false onkeydown={SendMessageMethod}></lightning-input-rich-text> -->
+                </div>
+                <div class="sendContainer">
+                    <lightning-icon style="--sds-c-icon-color-foreground-default: #176b5b !important;" class="sendClass" data-enter=true onclick={SendMessageMethod} icon-name="utility:send" ariant="success" alternative-text="success" size="medium" title="Send Message"></lightning-icon>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+
+</template>

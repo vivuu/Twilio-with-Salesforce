@@ -1,0 +1,7 @@
+<apex:page contentType="text/xml">
+    <Response>
+        <Dial>
+            <Number>918949633528</Number>
+        </Dial>
+    </Response>
+</apex:page>

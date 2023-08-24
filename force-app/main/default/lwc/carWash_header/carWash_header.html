@@ -1,0 +1,263 @@
+<template>
+
+	<div class="desktop-header-container">
+		<div class="nav shadow-bottom">
+			<div class="header-logo">		
+				<a href="/PFNCADNA/s/bwps-websitegeneralhomepage"><img src={Header_logo} height="70" width="140" alt="LOGO"> </a>
+			</div>
+			<div class="nav-links ">
+				<!-- <a href="/s/donordashboard" class="leftlink resp-header-link  homeNav" target="_self">HOMEPAGE</a> -->
+				<a href="/PFNCADNA/s/bwps-wip-browseclasses" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span data-id='browseclasses' class="menuItemClass">BROWSE CLASSES</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-howtoparticipate"
+					class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+					<span data-id='howtoparticipate' class="menuItemClass">HOW TO PARTICIPATE</span>
+				</a>
+				<a href=" /PFNCADNA/s/bwps-wip-faqs" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span data-id='faqs' class="menuItemClass">FAQS</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-blog" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span data-id='blog' class="menuItemClass">BLOG</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-aboutus" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span data-id='aboutus' class="menuItemClass">ABOUT US</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-contactus" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span data-id='contactus' class="menuItemClass">CONTACT US</span>
+				</a>
+
+
+				<a href="/PFNCADNA/s/bwps-wip-signin" class="rightlink anchorLinkClass">
+					<div class="box-white-button" data-login="login">
+						<button class="white-button">LOGIN</button>
+					</div>
+				</a>
+				<a  class="rightlink anchorLinkClass">
+					<div class="box-blue-button" data-donate="donate">
+						<button class="blue-button" onclick={openNavigateToDonatePage}>DONATE</button>
+					</div>
+					<template if:true={showdonationtooltip}>
+						<div style="height: 0px;">
+						</div>
+					</template>
+				</a>
+				
+			</div>
+		</div>
+	</div>
+	<div class="tablet-header-container">
+
+		<div class="tablet-link-box">
+			<div class="tablet-top">
+				<a class="tablet-home-link" href="/PFNCADNA/s/bwps-websitegeneralhomepage">
+					<img src={img_Home}>
+					<span>Home</span>
+				</a>
+				<span style={closeBackgroundImage} onclick={handleNavModalClose}></span>
+			</div>
+			<div class="tablet-main">
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-browseclasses">
+					<img src={img_Browse_Classes}>
+					<span>Browse Classes</span>
+				</a>
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-howtoparticipate">
+					<img src={img_How_to_Participate}>
+					<span>How to participate</span>
+				</a>
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-faqs">
+					<img src={img_FAQs}>
+					<span>FAQs</span>
+				</a>
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-blog">
+					<img src={img_Blog}>
+					<span>Blog</span>
+				</a>
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-aboutus">
+					<img src={img_About}>
+					<span>About Us</span>
+				</a>
+				<a class="tablet-nav-link" href="/PFNCADNA/s/bwps-wip-contactus">
+					<img src={img_Contact}>
+					<span>Contact us</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="nav shadow-bottom">
+			<div class="header-logo">
+				<a href="/PFNCADNA/s/bwps-websitegeneralhomepage"><img src={Header_logo} height="70" width="140" alt="LOGO"> </a>
+			</div>
+			<div class="nav-links ">
+				<!-- <a href="/PFNCADNA/s/bwps-wip-browseclasses" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">BROWSE CLASSES</span>
+            </a>
+            <a href="/PFNCADNA/s/bwps-wip-howtoparticipate" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">HOW TO PARTICIPATE</span>
+            </a>
+            <a href="/PFNCADNA/s/bwps-wip-faqs" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">FAQS</span>
+            </a>
+            <a href="/PFNCADNA/s/bwps-wip-blog" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">BLOG</span>
+            </a>
+            <a href="/PFNCADNA/s/bwps-wip-aboutus" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">ABOUT US</span>
+            </a>
+            <a href="/PFNCADNA/s/bwps-wip-contactus" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">CONTACT US</span>
+            </a> -->
+
+				<div class="tablet-menu-hemburger" onclick={handleNavModalOpen}>
+					<img src={img_Menu}>
+					<span style={menuStyle}>Menu</span>
+				</div>
+
+				<a href="/PFNCADNA/s/bwps-wip-signin" class="rightlink anchorLinkClass">
+					<div class="box-white-button">
+						<button class="white-button">LOGIN</button>
+					</div>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-donationpage" class="rightlink anchorLinkClass">
+					<div class="box-blue-button">
+						<button class="blue-button" >DONATE</button>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="mobile-header-container">
+		<!-- <div class="nav shadow-bottom">
+			<div class="header-logo">
+				<a href="/PFNCADNA/s/bwps-websitegeneralhomepage"><img src={Header_logo} height="70" width="140" alt="LOGO"> </a>
+			</div>
+			<div class="nav-links ">
+				<a href="/PFNCADNA/s/bwps-wip-browseclasses" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span class="menuItemClass">BROWSE CLASSES</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-howtoparticipate"
+					class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+					<span class="menuItemClass">HOW TO PARTICIPATE</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-faqs" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span class="menuItemClass">FAQS</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-blog" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span class="menuItemClass">BLOG</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-aboutus" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span class="menuItemClass">ABOUT US</span>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-contactus" class="leftlink resp-header-link  homeNav anchorLinkClass"
+					target="_self">
+					<span class="menuItemClass">CONTACT US</span>
+				</a>
+
+
+				<a href="/PFNCADNA/s/bwps-wip-signin" class="rightlink anchorLinkClass">
+					<div class="box-white-button">
+						<button class="white-button">LOGIN</button>
+					</div>
+				</a>
+				<a href="/PFNCADNA/s/bwps-wip-donationpage" class="rightlink anchorLinkClass">
+					<div class="box-blue-button">
+						<button class="blue-button" >DONATE</button>
+					</div>
+				</a>
+			</div>
+		</div> -->
+
+
+		<div class="m-header-top" data-id="m-header-top">
+			<div class="m-header-logo">
+				<a href="/PFNCADNA/s/bwps-websitegeneralhomepage">
+					<img src={Header_logo} alt="LOGO">
+                </a>
+			</div>
+			<div class="m-active-menu">
+				<!-- <img src={img_ActiveMenu} alt="menu"> -->
+				<span>{activeMenu}</span>
+			</div>
+			<div class="">
+				<a  class="">
+					<div class="">
+						<button class="m-blue-button" onclick={openNavigateToDonatePage}>DONATE</button>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="m-header-main" data-id="m-header-main">
+
+			<div class="m-nav-top">
+				<a class="tablet-home-link" href="/PFNCADNA/s/bwps-websitegeneralhomepage">
+					<img src={img_Home}>
+					<span>Home</span>
+				</a>
+				<span style={closeBackgroundImage} onclick={handleMobileNavModalClose}></span>
+			</div>
+
+			<div class="m-nav-main"> 
+
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-browseclasses">
+					<img src={img_Browse_Classes}>
+					<span>Browse Classes</span>
+				</a>
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-howtoparticipate">
+					<img src={img_How_to_Participate}>
+					<span>How to participate</span>
+				</a>
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-faqs">
+					<img src={img_FAQs}>
+					<span>FAQs</span>
+				</a>
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-blog">
+					<img src={img_Blog}>
+					<span>Blog</span>
+				</a>
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-aboutus">
+					<img src={img_About}>
+					<span>About Us</span>
+				</a>
+				<a class="m-nav-link" href="/PFNCADNA/s/bwps-wip-contactus">
+					<img src={img_Contact}>
+					<span>Contact us</span>
+				</a>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+
+		<div class="m-header-bottom">
+
+			<div class="m-menu-hemburger" onclick={handleMobileNavModalOpen}>
+				<img src={img_Menu}>
+				<span>Menu</span>
+			</div>
+			<!-- <div class="">
+				<a href="/PFNCADNA/s/bwps-wip-signin" class="">
+					<div class="">
+						<button class="m-blue-button" >GET A GUEST PASS</button>
+					</div>
+				</a>
+			</div> -->
+
+			<a href="/PFNCADNA/s/bwps-wip-signin" class={mobileLoginClass}>
+				<div class="">
+					<button class="m-white-button">LOGIN</button>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</template>

@@ -1,0 +1,34 @@
+<template>
+    <div class="mainContainer" >
+        <div class="searchContainer">
+            <input type="text" class="inputClass" placeholder="Search Location" onkeyup={searchedInput}>
+            <div class="nameListContainer">
+                <template for:each={locationListArray} for:item="loc">
+                    <div key={loc.Id} class="locationNameClass" onclick={selectedFromDropdown} data-name={loc.name} data-lat={loc.lat} data-lon={loc.lon}>{loc.name}</div>
+                </template>
+            </div>
+        </div>
+        <lightning-map style="width:100%;"
+            map-markers={mapMarkers}
+            zoom-level={zoomLevel}
+            list-view={listView}
+            center={defaultCenter}
+        >
+        </lightning-map>
+        <p>
+            {mapMarkers}
+        </p>
+    </div>
+    <div class="buttonContainer">
+        <div class="loginContainer">
+            <button class="loginClass">
+                LOGIN IN
+            </button>
+        </div>
+        <div class="signupContainer">
+            <button class="signupClass">
+                SIGN UP
+            </button>
+        </div>
+    </div>
+</template>

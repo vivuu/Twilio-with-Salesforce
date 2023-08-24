@@ -1,0 +1,22 @@
+<template>
+    <div lass="slds-select_container mainContainer" style="min-height:15rem;">
+        <select class="slds-select selectContainer" onchange={selectionChangeHandler} 
+                        required={isAttributeRequired} > 
+            <option selected value = "--Select Template--"> --Select Template-- </option>  
+            <template for:each={allTemplateArray} for:item="temp">
+                <!-- <div key={temp.id}>{temp.name}</div>  -->
+                <!-- <option key={temp.id}> {temp.name} </option>   -->
+                <option key={temp.Id} class="uiInputSelectOption" value={temp.name}>{temp.name}</option>
+            </template>
+         </select>
+         <div if:false={isTempSelected} class="ifrem-container1">
+            <div class="emptyContainer">No Document</div>
+        </div>
+         <div if:true={isTempSelected} class="ifrem-container2">
+            <iframe src={docUrl} style="width: 100%;height: 100%;" target="blank" allow="microphone; camera; fullscreen;" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+        <div if:true={isTempSelected} class="slds-button_brand buttonContainer">
+            <lightning-button label="Send" onclick={handleButtonClick}></lightning-button>
+        </div>
+    </div>
+</template>

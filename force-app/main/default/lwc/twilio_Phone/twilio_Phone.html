@@ -1,0 +1,20 @@
+<template>
+    <div class="mainContainer">
+        <div class="inputContainer">
+            <lightning-input type="text" name="input" required label="User Status"></lightning-input>
+            <lightning-input type="text" name="input2" class="number-input" required label="Phone Number" value={enteredNumber}></lightning-input>
+        </div>
+        <div class="phoneContainer">
+            <div class="numpad-container">
+                <!-- <input type="text" class="number-input" value={enteredNumber} disabled /> -->
+                <div class="numpad-buttons">
+                    <template for:each={numpadButtons} for:item="button">
+                        <button key={button.label} class="numpad-button" onclick={handleButtonClick} data-value={button.value}>
+                            {button.label}
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
